@@ -2,16 +2,16 @@
 require_once("connexion.php");
 
 class Auteur{
-    private $conn;
-    private $table = "auteurs";
+ private $conn;
+private $table = "auteurs";
 
-    public $id;
-    public $nom;
-    public $prenom;
+public $id;
+public $nom;
+public $prenom;
 
-    public $nationalite;
+public $nationalite;
 
-    public function __construct($db){
+public function __construct($db){
         $this->conn = $db;
 }
 public function create(){
