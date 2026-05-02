@@ -16,7 +16,7 @@ public function __construct($db){
 }
 public function create(){
     $sql= "INSERT INTO " . $this->table . " (nom, prenom, nationalite)
-                VALUES (:nom, :prenom, :nationalite)";
+            VALUES (:nom, :prenom, :nationalite)";
     
     $stmt = $this->conn->prepare($sql);
     $stmt->bindParam(":nom", $this->nom);
