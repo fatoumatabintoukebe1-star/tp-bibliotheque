@@ -78,5 +78,19 @@ public function delete() {
 
     return $stmt->execute();
 }
+public function countAll() {
+    $query = "SELECT COUNT(*) as total FROM " . $this->table;
+    $stmt = $this->conn->prepare($query);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $row['total'];
+}
+public function countExemplaires() {
+    $query = "SELECT SUM(quantite) as total FROM " . $this->table;
+    $stmt = $this->conn->prepare($query);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $row['total'];
+}
 }
 ?>
